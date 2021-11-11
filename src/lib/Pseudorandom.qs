@@ -1,12 +1,6 @@
 ﻿namespace Pseudorandom {
     operation ExtractInteger() : Int {
-        mutable rand = 0;
-        for _ in 1..64 {
-            if (Microsoft.Quantum.Llvm.ReadCycleCounter() &&& 1) == 1 {
-                set rand += 1;
-            }
-            set rand = rand <<< 1;
-        }
+        mutable rand = Microsoft.Quantum.Llvm.ReadCycleCounter();
 
         // Based on the Mersenne-Twister Engine bit scrambling matrix.
         // https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine

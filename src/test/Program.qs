@@ -4,7 +4,10 @@
 
     @EntryPoint()
     operation Run() : Int {
-        return DrawRandomInt(1, 25);
+        for _ in 1..9999 {
+            Message($"{DrawRandomInt(1, 10)}");
+        }
+        return DrawRandomInt(1, 10);
     }
 }
 
