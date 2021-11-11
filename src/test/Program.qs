@@ -3,8 +3,8 @@
     open Microsoft.Quantum.Intrinsic;
 
     @EntryPoint()
-    operation Run() : Unit {
-        Message($"{ExtractInteger()}");
+    operation Run() : Int {
+        return DrawRandomInt(1, 25);
     }
 }
 
